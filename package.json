@@ -1,0 +1,62 @@
+{
+  "name": "shaku",
+  "version": "0.0.0-development",
+  "description": "Queue with decaying-based rate limiter",
+  "author": "Alexandre Breteau <contact@seldszar.fr>",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "homepage": "https://github.com/seldszar/shaku#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seldszar/shaku.git"
+  },
+  "bugs": {
+    "url": "https://github.com/seldszar/shaku/issues"
+  },
+  "files": [
+    "lib",
+    "LICENSE",
+    "README.md"
+  ],
+  "keywords": [
+    "queue"
+  ],
+  "engine": {
+    "node": ">=8.0.0"
+  },
+  "scripts": {
+    "documentation": "documentation build lib/index.js --format=md --output=API.md",
+    "lint": "eslint --format codeframe .",
+    "lint-staged": "lint-staged",
+    "semantic-release": "semantic-release",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^7.0.0",
+    "@commitlint/config-conventional": "^7.0.1",
+    "babel-eslint": "^9.0.0",
+    "documentation": "^8.0.0",
+    "eslint": "^5.0.1",
+    "eslint-config-prettier": "^3.0.1",
+    "eslint-plugin-prettier": "^2.6.1",
+    "husky": "^1.0.0-rc.14",
+    "jest": "^23.2.0",
+    "lint-staged": "^7.2.0",
+    "prettier": "^1.13.7",
+    "semantic-release": "^15.6.1"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "npm run lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint --format codeframe"
+  }
+}
