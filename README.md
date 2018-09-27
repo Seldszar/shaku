@@ -1,5 +1,7 @@
 # Shaku
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Seldszar/shaku.svg)](https://greenkeeper.io/)
+
 > Queue with decaying-based rate limiter
 
 ## Table of Contents
